@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+     Copyright 2015 CloudBees, Inc.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+
+-->
+<plugin>
+    <key>@PLUGIN_KEY@</key>
+    <version>@PLUGIN_VERSION@</version>
+    <label>@PLUGIN_KEY@</label>
+    <description>Integration for Windows Azure</description>
+    <configure>configurations.xml</configure>
+    <help>EC-Azure_help.xml</help>
+    <author>CloudBees</author>
+    <authorUrl>http://www.electric-cloud.com/support</authorUrl>
+    <category>Resource Management</category>
+    <commander-version min="3.6"/>
+    <components>
+        <component name="ConfigurationManagement">
+            <javascript>war/ecplugins.azure.ConfigurationManagement/ecplugins.azure.ConfigurationManagement.nocache.js</javascript>
+        </component>
+        <component name="CreateHostedServiceParameterPanel">
+            <javascript>war/ecplugins.azure.CreateHostedServiceParameterPanel/ecplugins.azure.CreateHostedServiceParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="CreateStorageAccountParameterPanel">
+            <javascript>war/ecplugins.azure.CreateStorageAccountParameterPanel/ecplugins.azure.CreateStorageAccountParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="CreateDeploymentParameterPanel">
+            <javascript>war/ecplugins.azure.CreateDeploymentParameterPanel/ecplugins.azure.CreateDeploymentParameterPanel.nocache.js</javascript>
+        </component>
+        <component name="PutBlobParameterPanel">
+            <javascript>war/ecplugins.azure.PutBlobParameterPanel/ecplugins.azure.PutBlobParameterPanel.nocache.js</javascript>
+        </component>
+    </components>
+    <customTypes>
+        <customType name="CreateHostedService">
+            <parameterPanel>
+                <javascript>war/ecplugins.azure.CreateHostedServiceParameterPanel/ecplugins.azure.CreateHostedServiceParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-Azure_help?s=Administration&amp;ss=Plugins#CreateHostedService
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="CreateStorageAccount">
+            <parameterPanel>
+                <javascript>war/ecplugins.azure.CreateStorageAccountParameterPanel/ecplugins.azure.CreateStorageAccountParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-Azure_help?s=Administration&amp;ss=Plugins#CreateStorageAccount
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="CreateDeployment">
+            <parameterPanel>
+                <javascript>war/ecplugins.azure.CreateDeploymentParameterPanel/ecplugins.azure.CreateDeploymentParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-Azure_help?s=Administration&amp;ss=Plugins#CreateDeployment
+                </help>
+            </parameterPanel>
+        </customType>
+        <customType name="PutBlob">
+            <parameterPanel>
+                <javascript>war/ecplugins.azure.PutBlobParameterPanel/ecplugins.azure.PutBlobParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_KEY@-@PLUGIN_VERSION@/EC-Azure_help?s=Administration&amp;ss=Plugins#PutBlob
+                </help>
+            </parameterPanel>
+        </customType> 
+    </customTypes>   
+    <hasAdoc>true</hasAdoc>
+
+<detailedDescription>The Azure Services Platform (Azure) is an internet-scale cloud services platform hosted in Microsoft data centers, which provides an operating system and a set of developer services that can be used individually or together.
+
+The EC-Azure plugin communicates with Windows Azure through Windows Azure Service Management and Storage Services REST application programming interfaces (API), which provides programmatic access to much of the functionality available through the Management Portal using a RESTful application development style. Using the Service Management API, you can manage your virtual machines, networks and databases. EC-Azure plugin allows users to automate and perform operations on Windows Azure providing a more generic interface for managing deployments.</detailedDescription>
+<catalogLabel>Azure Services Platform</catalogLabel>
+</plugin>
