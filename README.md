@@ -1,16 +1,8 @@
-Plugin Version @PLUGIN\_VERSION@
-
-Revised on November 30, 2022
-
 > **_NOTE:_** In an effort to streamline workflows and improve user experience,
-CloudBees will be phasing out EC-Azure in favor of a new Azure CLI
-plugin. The phase-out will start with the CloudBees CD/RO 10.11 release,
-where we will stop providing new feature support and patches for
-EC-Azure. The Azure-CLI plugin will be released shortly after.
-
-We suggest you transition from using EC-Azure and EC-AzureDevops to
-Azure-CLI as soon as it is available, to maintain new feature support
-and patch integration.
+CloudBees has phased out EC-Azure in favor of a new Azure CLI
+plugin. We suggest you transition from using EC-Azure to
+[Azure-CLI](https://docs.cloudbees.com/docs/cloudbees-cd-plugin-docs/latest/azurecli/), to maintain new feature support
+and patch integration with CloudBees CD/RO.
 
 # Integrated version
 
