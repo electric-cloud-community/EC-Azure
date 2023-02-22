@@ -67,6 +67,20 @@ dependencies {
             	testCompile "com.googlecode.json-simple:json-simple:1.1"
             	testCompile "org.apache.httpcomponents:httpclient:4.5.2"
 }
+
+configurations.all {
+    resolutionStrategy {
+        force group: 'com.electriccloud', name: 'ec-test', version: '10.1.0'
+        force group: 'com.electriccloud', name: 'commander-client', version: '10.1.0'
+        force group: 'com.electriccloud', name: 'commander-sdk', version: '6.1.2.1'
+        force group: 'com.electriccloud', name: 'ec_internal', version: '6.1.2.1'
+        force group: 'com.google.gwt', name: 'gwt-user', version: '2.5.0-ec3'
+        force group: 'com.google.gwt', name: 'gwt-dev', version: '2.5.0-ec1'
+
+        cacheChangingModulesFor 0, 'seconds'
+    }
+}
+
 test
 {
   systemProperties['PLUGIN_VERSION'] = version
