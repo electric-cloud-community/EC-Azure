@@ -8,11 +8,22 @@
 
 buildscript {
     repositories {
-	maven {
-		url 'http://dl.bintray.com/ecpluginsdev/maven'
-	}
-
-	jcenter()
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url 'https://nexus-internal.cloudbees.com/content/repositories/snapshots'
+            credentials {
+                username = System.getenv('NEXUS_USERNAME') ?: nexusUsername
+                password = System.getenv('NEXUS_PASSWORD') ?: nexusPassword
+            }
+        }
+        maven {
+            url 'https://nexus-internal.cloudbees.com/content/groups/mirror'
+            credentials {
+                username = System.getenv('NEXUS_USERNAME') ?: nexusUsername
+                password = System.getenv('NEXUS_PASSWORD') ?: nexusPassword
+            }
+        }
     }
     dependencies {
         classpath group: 'com.electriccloud.plugins', name: 'flow-gradle-plugin', version: '+'
